@@ -1,0 +1,90 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(./bg.jpg);
+    background-size: cover;
+}
+
+
+.main{
+    display: flex;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width:25%;
+    height: 75%;
+    border-radius: 25px;
+    border: rgb(255, 204, 233);
+    border-style: solid;
+}
+
+.screen{
+    background-image: url(./musicplay1.jpg);
+    background-size: 409px;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    border-radius: 10px;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    right: 50%;
+    width: 80%;
+    height: 35%;
+    transform: translate(-50%, 0%);
+    border: 8px solid rgb(255, 204, 233);;
+}
+
+.play-wrapper-outside{
+    background-color: rgb(255, 244, 221);
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    right: 59%;
+    width: 82%;
+    height: 50%;
+    transform: translate(-50%, 74%);
+    border: 8px solid rgb(255, 204, 233);
+    background-position: center;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+.play-wrapper-inside{
+    background-color: rgb(255, 244, 221);
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    right: 59%;
+    width: 82%;
+    height: 50%;
+    transform: translate(-50%, 74%);
+    border: 8px solid rgb(255, 204, 233);
+    background-position: center;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.play{
+    position: absolute;
+    padding: 10px;
+    width: 100%;
+    height: 98%;
+
+    border: 2px solid rgb(0, 0, 0);
+    background-position: center;
+    border-radius: 15px;
+    display: flex;
+}
+
+button-digit{
+    
+
+}
