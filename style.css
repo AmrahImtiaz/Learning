@@ -4,7 +4,7 @@
 }
 
 :root {
-    --musicbg: url('/musicplay1.jpg');
+    --musicbg: url(/musicplay1.jpg);
 }
 
 body{
