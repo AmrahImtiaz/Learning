@@ -5,17 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6173408314.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="main">
         <div class="screen">
+            <img class="cl1" src="Asset 1.png" alt="">
+            <img class="cl2" src="Asset 1.png" alt="">
         </div>
-        <div class="play-wrapper-outside">
-        <div class="playbtn">
+        <div class="play">
+            <audio  class="musicplayer" id="song" loop>
+                <source src="music/Phonk/AUTOMOTIVO PA PA PAPAI - DJ RIO.mp3" type="audio/mpeg">
+            </audio>
+            <input onchange="" type="range" name="" id="musicplayer_range" value="0" max="100">
             
-        </div>
-            <button class="button-digit" >1</button>
-            <button class="button-digit" >2</button>
+            <div class="controls">
+                <div onclick="rewind()"><i class="fa-solid fa-backward" id="backward" ></i></div>
+                <div onclick='Playpause()' class="play_pause"><i class="fa-solid fa-play" id="player" ></i></div>
+                <div onclick="fastforward()" ><i class="fa-solid fa-forward" id="forward"></i></div>
+            </div>
+            <button onclick="changeSong(0)" class="button-digit">1</button>
+            <button onclick="changeSong(1)" class="button-digit">2</button>
             <button class="button-digit" >3</button>
             <button class="button-digit" >4</button>
             <button class="button-digit" >5</button>
@@ -23,13 +33,61 @@
             <button class="button-digit" >7</button>
             <button class="button-digit" >8</button>
             <button class="button-digit" >9</button>
+            <button class="button-digit" >*</button>
             <button class="button-digit" >10</button>
             <button class="button-digit" >#?!</button>
-            <button class="button-digit" >*</button>
-            <div class="play"></div>
-        </div>
     </div>
     </div>
-    </div>
+    
 </body>
+<script>
+    let progress = document.getElementById('musicplayer_range');
+    let song = document.getElementById('song');
+    let playerbt = document.getElementById('player');
+
+    // Load metadata
+    song.onloadedmetadata = function () {
+        progress.max = song.duration;
+    };
+
+    function Playpause() {
+        if (song.paused) {
+            song.play();
+            playerbt.classList.replace('fa-play', 'fa-pause');
+        } else {
+            song.pause();
+            playerbt.classList.replace('fa-pause', 'fa-play');
+        }
+    }
+
+    function fastforward() {
+        song.currentTime = Math.min(song.currentTime + 5, song.duration);
+    }
+
+    function rewind() {
+        song.currentTime = Math.max(song.currentTime - 5, 0);
+    }
+
+    // Sync progress bar
+    song.ontimeupdate = function () {
+        progress.value = song.currentTime;
+    };
+
+    // Allow user to seek in audio
+    progress.oninput = function () {
+        song.currentTime = progress.value;
+    };
+
+    //change songs
+    function changeSong(index){
+        let songs = ['AUTOMOTIVO PA PA PAPAI - DJ RIO', 'SpongeBob SquarePants Theme'];
+    if (index >= 0 && index < songs.length) {
+        song.src = 'music/' + songs[index] + '.mp3';
+        song.play();
+        playerbt.classList.replace('fa-play', 'fa-pause');
+    }
+    }
+
+</script>
+
 </html>

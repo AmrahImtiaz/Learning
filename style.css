@@ -1,3 +1,12 @@
+@font-face{
+    font-family: 'PORKYS_';
+    src: url('./font/PORKYS_.TTF');
+}
+
+:root {
+    --musicbg: url('/musicplay1.jpg');
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -9,19 +18,19 @@ body{
 .main{
     display: flex;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color:  rgb(255, 128, 181);
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     width:25%;
     height: 75%;
-    border-radius: 25px;
-    border: rgb(255, 204, 233);
+    border-radius: 35px;
+    border:10px rgb(255, 204, 233);
     border-style: solid;
 }
 
 .screen{
-    background-image: url(./musicplay1.jpg);
+    background-image: var(--musicbg);
     background-size: 409px;
     background-repeat: no-repeat;
     background-position: center;
@@ -34,57 +43,113 @@ body{
     width: 80%;
     height: 35%;
     transform: translate(-50%, 0%);
-    border: 8px solid rgb(255, 204, 233);;
-}
-
-.play-wrapper-outside{
-    background-color: rgb(255, 244, 221);
-    position: absolute;
-    top: 7%;
-    left: 50%;
-    right: 59%;
-    width: 82%;
-    height: 50%;
-    transform: translate(-50%, 74%);
     border: 8px solid rgb(255, 204, 233);
-    background-position: center;
-    border-radius: 15px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-
-
-.play-wrapper-inside{
-    background-color: rgb(255, 244, 221);
-    position: absolute;
-    top: 7%;
-    left: 50%;
-    right: 59%;
-    width: 82%;
-    height: 50%;
-    transform: translate(-50%, 74%);
-    border: 8px solid rgb(255, 204, 233);
-    background-position: center;
-    border-radius: 15px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
 }
 
 .play{
+    background-color: rgb(255, 244, 221);
     position: absolute;
-    padding: 10px;
-    width: 100%;
-    height: 98%;
-
-    border: 2px solid rgb(0, 0, 0);
+    top: 7%;
+    left: 50%;
+    right: 59%;
+    width: 82%;
+    height: 50%;
+    transform: translate(-50%, 74%);
+    border: 8px solid rgb(255, 203, 232);
     background-position: center;
     border-radius: 15px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+   
 }
 
-button-digit{
-    
+.button-digit{
+    background-color:  rgb(255, 128, 181);
+    width: 30%;
+    height: 15%;
+    border: 0.2px solid rgb(12, 0, 7);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size:50px;
+    font-family: 'PORKYS_';
+    color: rgb(255, 243, 252);
+    box-shadow: 2px 2px 2px 2px rgba(50, 24, 39, 0.258);    
 
+}
+
+.button-digit:hover{
+    background-color:rgb(255, 135, 203);
+    cursor: pointer;
+    transform: scale(1.06);
+    transition: 0.1s;
+    transition-timing-function: ease-in;
+}
+
+.cl1{
+    width: 90px;
+    height: 70px;
+    position: absolute;
+    top: -8%;
+    left: -13%;
+}
+
+.cl2{
+    width: 90px;
+    height: 70px;
+    position: absolute;
+    top: 86%;
+    left: 90%;
+}
+
+
+#musicplayer_range{
+    -webkit-appearance: none;
+    background-color: rgb(255, 153, 211);
+    margin-top: 25px;
+    width: 100%;
+    height: 6px;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 10px;
+}
+
+#musicplayer_range::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background-color: rgb(255, 103, 189);
+    border: 5px solid rgb(255, 255, 255);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+.controls{
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.controls i{
+    background-color: aliceblue;
+    display: flex;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 2px 2px rgba(50, 24, 39, 0.258);   
+
+}
+
+.play_pause i {
+    background-color: rgb(255, 128, 181);
+    color: #ffffff;
+    width: 70px;
+    height: 70px;
 }
